@@ -1,0 +1,313 @@
+.page {
+  min-height: 100vh;
+  padding: 12px;
+  background: #101112;
+  color: #ffffff;
+}
+
+.topBar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 10px;
+  padding: 4px 0 8px;
+
+  background: rgba(16, 17, 18, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.searchWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search {
+  width: 100%;
+  height: 42px;
+
+  padding: 0 40px 0 14px;
+
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #111111;
+
+  outline: none;
+
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+
+  box-sizing: border-box;
+}
+
+.search::placeholder {
+  color: #777777;
+}
+
+.search:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.45);
+}
+
+.clearButton {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+
+  width: 26px;
+  height: 26px;
+
+  padding: 0;
+  transform: translateY(-50%);
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #111111;
+
+  font-size: 20px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.clearButton:hover {
+  background: #e5e5e5;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.actionButton {
+  height: 34px;
+
+  padding: 0 12px;
+
+  border: 1px solid #ffffff;
+  border-radius: 7px;
+
+  background: transparent;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.actionButton:hover {
+  background: #ffffff;
+  color: #111111;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  width: 100%;
+
+  gap: 10px;
+
+  align-items: start;
+}
+
+.card {
+  width: 100%;
+
+  overflow: hidden;
+
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+
+  background: #191b1e;
+
+  box-sizing: border-box;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 8px 10px;
+
+  border-bottom: 1px solid #ffffff;
+}
+
+.cardHeader h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.cardHeader span {
+  display: inline-flex;
+
+  min-width: 22px;
+  height: 22px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 6px;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+  color: #111111;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+}
+
+.question {
+  border-bottom: 1px solid #393b3f;
+}
+
+.question:last-child {
+  border-bottom: 0;
+}
+
+.questionOpen {
+  background: #222428;
+}
+
+.questionButton {
+  display: flex;
+
+  width: 100%;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  padding: 7px 9px;
+
+  border: 0;
+
+  background: transparent;
+  color: #ffffff;
+
+  text-align: left;
+  font: inherit;
+
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+}
+
+.questionButton:hover {
+  background: #292c30;
+}
+
+.chevron {
+  flex-shrink: 0;
+
+  width: 16px;
+
+  color: #ffffff;
+
+  text-align: center;
+
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.answer {
+  padding: 0 9px 9px;
+
+  color: #eeeeee;
+
+  font-size: 16px;
+}
+
+.answer pre {
+  margin: 12px 0;
+  padding: 16px;
+  overflow-x: auto;
+  border-radius: 8px;
+  background: #1e1e1e;
+}
+
+.answer code {
+  font-family: monospace;
+}
+
+.answer :not(pre) > code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: #2a2a2a;
+}
+
+.empty {
+  margin: 40px auto;
+
+  color: #b5b5b5;
+
+  text-align: center;
+
+  font-size: 14px;
+}
+
+@media (min-width: 1800px) {
+  .page {
+    padding: 12px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .page {
+    padding: 8px;
+  }
+
+  .topBar {
+    flex-direction: column;
+    align-items: stretch;
+
+    padding: 4px 0 6px;
+  }
+
+  .actions {
+    justify-content: flex-end;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
